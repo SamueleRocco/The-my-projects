@@ -1,0 +1,188 @@
+/* author: https://codepen.io/Sicontis/pen/qBVMzLj
+Sicontis
+ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Share+Tech+Mono&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --white: #e4e4e4;
+  --purple: rgba(134, 12, 134, 0.3);
+  --blue: rgba(55, 112, 177, 0.3);
+  --pink: rgba(170, 61, 125, 0.5);
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(90deg, #1c1822, #2c231f, rgb(28, 24, 34));
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  width: 375px;
+  height: min(667px, 70vh);
+  color: var(--white);
+  border-radius: 20px;
+  padding: 2em;
+  display: grid;
+  grid-template-rows: 60px 300px 1fr 100px;
+  border: 1px solid rgb(141, 141, 141);
+  background: radial-gradient(circle at 50% 40%, #2e2e2e, #1e1d20 40%);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+header,
+section,
+nav {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+header {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+section {
+  position: relative;
+}
+.timer-visuals {
+  position: absolute;
+  opacity: 0.7;
+}
+.timer-visuals svg {
+  width: 300px;
+  height: 300px;
+}
+.timer-visuals circle {
+  fill: none;
+}
+.timer-visuals circle:nth-child(1) {
+  stroke: var(--purple);
+  stroke-width: 6;
+}
+.timer-visuals circle:nth-child(2) {
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+.timer-visuals circle:nth-child(3) {
+  stroke: var(--pink);
+  stroke-width: 10;
+}
+.timer-display {
+  font-family: "Share Tech Mono";
+  font-weight: normal;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.timer-display h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.controls {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+button {
+  position: relative;
+}
+.btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btn svg {
+  position: absolute;
+}
+.btn svg path {
+  stroke: var(--white);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+#icon-circle {
+  width: 50px;
+  height: 50px;
+}
+#icon-path {
+  width: 25px;
+  height: 25px;
+}
+.btn-start {
+  left: 15%;
+  z-index: 5;
+}
+.btn-stop {
+  left: 15%;
+  z-index: 4;
+}
+.btn-reset {
+  right: 15%;
+  z-index: 2;
+}
+.btn-laps {
+  right: 15%;
+  z-index: 3;
+}
+
+footer {
+  height: 100%;
+  display: grid;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.laps ul {
+  width: min-content;
+  list-style: none;
+  display: flex;
+}
+.laps li {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  width: 60px;
+}
+.laps li strong {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 3px;
+  opacity: 0.5;
+}
+.laps li:nth-child(1) {
+  opacity: 1;
+}
+
+.credit {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  font-family: "Share Tech Mono";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(109, 109, 109);
+}
+.credit a {
+  text-decoration: none;
+  color: #ea4c89;
+}

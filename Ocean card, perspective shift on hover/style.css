@@ -1,0 +1,87 @@
+/* author: Drew Carson
+https://codepen.io/drewcarson/pen/ZEVKKOx
+ */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Montserrat:wght@200&family=Radley&display=swap");
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #aae5ee, #66d0e1);
+  background-repeat: no-repeat;
+}
+body .container {
+  display: flex;
+  perspective: 600px;
+}
+body .container .card {
+  width: 200px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-image: linear-gradient(to bottom, transparent, rgba(38, 167, 186, 0.4));
+  background-size: cover;
+  background-position: 50% 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 1px solid white;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% -50px;
+}
+body .container .card:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 8px;
+  transform-origin: center;
+  transition: 0.2s ease;
+}
+body .container .card:hover {
+  cursor: pointer;
+}
+body .container .card:hover:before {
+  transform: scale(0.94, 0.96);
+  border-radius: 2px;
+}
+body .container .card:hover .headline {
+  transform: translateZ(20px);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+body .container .card .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+body .container .card .video-container video {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: auto;
+  z-index: -1;
+  display: none;
+}
+body .container .card .headline {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: 0.2s ease;
+  transform-style: preserve-3d;
+}

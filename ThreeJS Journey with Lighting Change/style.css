@@ -1,0 +1,43 @@
+/* author: William Staudenmeier
+https://codepen.io/WilliamStaudenmeier/pen/vYQjzwr */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {background:black;}
+
+#world {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: rgb(0,0,25);
+
+  
+}
+
+@keyframes sunset
+{
+  50% {
+    background:rgb(150,200,250);}
+  
+}
+
+.wrapper
+
+{
+  z-index:10;
+  opacity:.5;
+  position:absolute;
+  width;100%
+  height:100%;
+background:black;
+  
+webkit-animation:lighting infinite;
+  -animation-duration:40s;
+}
+
+@keyframes lighting
+
+{50% {opacity:.5;}}

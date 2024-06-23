@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script defer src="https://assets.codepen.io/16327/DrawSVGPlugin3.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script type="module" defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="app">
+        <header>
+          <p>Stopwatch</p>
+        </header>
+      
+        <section>
+          <div class="timer-visuals" id="timer_visuals">
+            <svg viewBox="0 0 290 290">
+              <circle id="ring" cx="145" cy="145" r="138" />
+              <circle id="ring" cx="145" cy="145" r="128" />
+              <circle id="ring" cx="145" cy="145" r="118" />
+            </svg>
+          </div>
+          <div class="timer-display">
+            <h1>{{ formatTimerDisplay }}</h1>
+          </div>
+        </section>
+      
+        <nav>
+          <div class="controls">
+            <button class="btn btn-start" @click="startTimer">
+              <svg id="icon-circle" viewBox="0 0 50 50">
+                <circle id="circ-one" cx="25" cy="25" r="24" stroke="#CC33FF" stroke-width="1" fill="none" />
+                <circle id="circ-two-1" cx="25" cy="25" r="24" stroke="#FF00CC" stroke-width="3" fill="none" />
+              </svg>
+              <svg id="icon-path" viewBox="0 0 24 24">
+                <path d="m5 3 14 9-14 9V3z" />
+              </svg>
+            </button>
+            <button class="btn btn-stop" @click="stopTimer">
+              <svg id="icon-circle" viewBox="0 0 50 50">
+                <circle id="circ-one" cx="25" cy="25" r="24" stroke="#CC33FF" stroke-width="1" fill="none" />
+                <circle id="circ-two-2" cx="25" cy="25" r="24" stroke="#FF00CC" stroke-width="3" fill="none" />
+              </svg>
+              <svg id="icon-path" viewBox="0 0 24 24">
+                <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+              </svg>
+            </button>
+            <button class="btn btn-reset" @click="resetTimer">
+              <svg id="icon-circle" viewBox="0 0 50 50">
+                <circle id="circ-one" cx="25" cy="25" r="24" stroke="#CC33FF" stroke-width="1" fill="none" />
+                <circle id="circ-two-3" cx="25" cy="25" r="24" stroke="#FF00CC" stroke-width="3" fill="none" />
+              </svg>
+              <svg id="icon-path" viewBox="0 0 24 24">
+                <path d="M23 4v6h-6 M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+              </svg>
+            </button>
+      
+            <button class="btn btn-laps" @click="addLapTime">
+              <svg id="icon-circle" viewBox="0 0 50 50">
+                <circle id="circ-one" cx="25" cy="25" r="24" stroke="#CC33FF" stroke-width="1" fill="none" />
+                <circle id="circ-two-4" cx="25" cy="25" r="24" stroke="#FF00CC" stroke-width="3" fill="none" />
+              </svg>
+              <svg id="icon-path" viewBox="0 0 24 24">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
+              </svg>
+            </button>
+      
+          </div>
+        </nav>
+      
+        <footer>
+          <div class="laps">
+            <ul v-if="show">
+              <li id="lapitem"><strong>Lap {{ currentLap }}</strong>{{ formatTimerDisplay }}</li>
+              <li v-for="(lap, i) in lapsArray" :key="i" id="lapitem">
+                <div><strong>Lap {{ lap.id }}</strong>{{ lap.lt }}</div>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      
+      </div>
+      
+      <div class="credit">
+        Based on this <a href="https://dribbble.com/shots/10738332-Ramotion-Labs-Stopwatch-UI" target="blank">Dribble shot</a>
+      </div>
+</body>
+</html>
