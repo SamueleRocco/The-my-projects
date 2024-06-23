@@ -1,0 +1,157 @@
+/* author: https://codepen.io/yexx/pen/yxzgMJ
+Yeshua Emanuel Braz */
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #303030;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+.icon-error {
+  display: block;
+  font-size: 0px;
+  color: $transparent;
+}
+.icon-error svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.icon-error svg circle {
+  fill: #a50000;
+}
+.icon-error svg line {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+.errorBox {
+  position: absolute;
+  min-width: 350px;
+  background: #fff;
+  font-size: 0.9em;
+  border: 1px solid #2d89ef;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+  animation: bounce 0.15s ease-in;
+}
+.errorBox.out {
+  animation: bounce-out 0.1s ease;
+}
+.errorBox header {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.errorBox header h1 {
+  width: 100%;
+}
+.errorBox header a.close {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #000;
+}
+.errorBox .content {
+  display: flex;
+  align-items: center;
+  padding: 30px 20px;
+}
+.errorBox .content i.icon-error {
+  width: 40px;
+  height: 40px;
+}
+.errorBox .content p {
+  padding: 0 10px;
+}
+.errorBox footer {
+  display: flex;
+  justify-content: flex-end;
+  background: #f0f0f0;
+  padding: 8px 10px;
+  border-top: 1px solid #e0e0e0;
+}
+.errorBox footer button {
+  padding: 6px 12px;
+  background: #d9d9d9;
+  font-family: 'Open Sans', serif;
+  border: 1px solid #c0c0c0;
+  border-radius: 0;
+}
+.errorBox footer button:focus {
+  border-color: #2d89ef;
+}
+.errorBox footer button:active {
+  border-color: #2b5797;
+}
+.errorBox footer button::-moz-focus-inner {
+  border: 0;
+}
+@-moz-keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-o-keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-moz-keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-o-keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

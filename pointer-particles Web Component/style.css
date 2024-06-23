@@ -1,0 +1,19 @@
+/* author: https://codepen.io/hexagoncircle/pen/vYwKNzR
+Ryan Mulligan
+ */
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    overflow: hidden;
+    display: grid;
+    color: white;
+    background: black;
+  }
+  

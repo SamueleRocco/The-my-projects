@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <small>Pick two colors, and drag the gray slider to compare. </small>
+    </p>
+    <fieldset data-uic="color-compare" style="--cc-mask:url('https://assets.stoumann.dk/img/colors-base.webp');">
+        <img src="https://assets.stoumann.dk/img/colors-base.webp" alt="Image of a car" loading="lazy" decoding="async">
+        <label aria-label="Slide to compare two colors against an image">
+            <input type="range" value="50" name="_x" data-scope="fieldset" data-unit="%">
+        </label>
+        <label aria-label="First color">
+            <input type="color" value="#DCAEE5" data-scope="fieldset" data-key="_c1">
+        </label>
+        <label aria-label="Second color">
+            <input type="color" value="#9285D6" data-scope="fieldset" data-key="_c2">
+        </label>
+    </fieldset>
+    <p>
+        <small>Image tweaked and modified from <a
+                href="https://css-tricks.com/two-images-and-an-api-everything-we-need-for-recoloring-products/">this
+                article</a>. Firefox does <strong>not support</strong> CSS nesting yet.</small>
+    </p>
+    <script src="main.js"></script>
+</body>
+
+</html>

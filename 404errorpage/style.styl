@@ -1,0 +1,89 @@
+html,body
+  height 100%;
+
+body
+  display flex; align-items center; justify-content center;
+  background: #303030;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+  
+//--icon
+.icon-error
+  display block; 
+  font-size: 0px; color $transparent;
+
+  svg
+    display block; width 100%; height 100%;
+    circle
+      fill #a50000;
+
+    line
+      stroke: #fff;
+      stroke-width: 2px;
+
+//--box
+.errorBox
+  position: absolute;
+  min-width 350px;
+  background: #fff;
+  font-size: 0.9em;
+  border: 1px solid #2d89ef;
+  box-shadow: 0 3px 12px rgba(#000,0.5);
+  animation bounce 0.15s ease-in
+    
+  &.out
+    animation bounce-out 0.1s ease;
+
+  header
+    display flex; align-items: center
+    background #f0f0f0; padding: 8px 10px;
+    border-bottom 1px solid #e0e0e0;
+    h1
+      width 100%;
+    
+    a.close
+      font-size: 1.5em;
+      text-decoration none;
+      color: #000;
+  
+  .content
+    display: flex; align-items: center;
+    padding: 30px 20px;
+    
+    i.icon-error
+      width 40px; height 40px;
+    p
+      padding 0 10px;
+  
+  footer
+    display flex; justify-content: flex-end;
+    background #f0f0f0; padding: 8px 10px;
+    border-top 1px solid #e0e0e0;
+    
+    button
+      padding: 6px 12px;
+      background #d9d9d9;
+      font-family: 'Open Sans', serif;
+      border: 1px solid #c0c0c0;
+      border-radius 0;
+      
+      &:focus
+        border-color: #2d89ef;
+        
+      &:active
+        border-color: #2b5797;
+
+      &::-moz-focus-inner
+        border: 0;
+
+@keyframes bounce
+  0%
+    transform scale(0);
+  100%
+    transform scale(1);
+
+@keyframes bounce-out
+  0%
+    transform scale(1);
+  100%
+    transform scale(0);
